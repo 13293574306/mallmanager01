@@ -4,12 +4,18 @@ import Vue from 'vue'
 import App from './App'
 import ElementUI from 'element-ui'
 import MyServerHttp from '@/plugins/http.js'
+import moment from 'moment'
 //  不要忘记引入的 css 文件
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/reset.css'
 
 
 import router from './router'
+
+// 全局过滤器  -   处理日期
+Vue.filter('fmtdate',(v)=>{
+    return moment(v).format('YYYY-MM-DD')
+})
 
 // 适用vue插件
 Vue.use(ElementUI)
